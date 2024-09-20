@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --magnolia: #f4effaff;
+    --violeta: #2f184bff;
+    --roxo: #532b88ff;
+    --roxo-claro: #9b72cfff;
+    --rosa-claro: #c8b1e4ff;
+    --preto: #000000;
+    --fonte-titulo: "M PLUS Rounded 1c", sans-serif;
+    --fonte-texto: "Cinzel", serif;
+}
+
+body{
+    background-color: var(--magnolia);
+    font-family: var(--fonte-texto);
+    color: var(--preto);
+    height: 100vh;
+}
+
+header{
+    background-color: var(--rosa-claro);
+    text-align: center;
+}
+
+h1{
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    color: var(--roxo-claro);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+nav a{
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 2rem;
+    margin: 0 2rem 1rem 0;
+}
