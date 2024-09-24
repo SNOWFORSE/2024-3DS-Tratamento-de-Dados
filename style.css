@@ -44,3 +44,22 @@ nav a{
     font-size: 2rem;
     margin: 0 2rem 1rem 0;
 }
+
+nav a:hover{
+    text-transform: underline;
+    color: var(--violeta);
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--rosa-claro);
+    color: var(--violeta);
+    width: 100%;
+    height: 3rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
