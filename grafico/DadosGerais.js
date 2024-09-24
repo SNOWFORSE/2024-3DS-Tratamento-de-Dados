@@ -1,0 +1,1 @@
+const url = 'https://raw.githubusercontent.com/SNOWFORSE/json/refs/heads/main/grafico.json'
