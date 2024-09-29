@@ -12,7 +12,7 @@ async function vizualizarInformacoes() {
 
     const paragrafo = document.createElement('p')
     paragrafo.classList.add('caixa-grafico__texto')
-    paragrafo.innerHTML = `Em uma busca de descobris os melhores custo-beneficio e mais usados em 2024, foi feita uma série de pesquisas em diferentes fontes. Com o auxilio da inteligência artificial do goole, foi possivel estimas que o celular mais usado foi ${celularMaisUsado} com um total de pessoas usando de aproximadamente ${numeroDePessoasQueUsam} com uma porcentagem de ${porcentagem}%`
+    paragrafo.innerHTML = `Em uma busca de descobris os melhores custo-beneficio e mais usados em 2024, foi feita uma série de pesquisas em diferentes fontes. Com o auxilio da inteligência artificial do goole, foi possivel estimas que o celular mais usado foi <span>${celularMaisUsado}</span> com um total de pessoas usando de aproximadamente <span>${numeroDePessoasQueUsam}</span> com uma porcentagem de <span>${porcentagem}%</span>`
 
     const caixa = document.getElementById('caixa-grafico')
     caixa.appendChild(paragrafo)
