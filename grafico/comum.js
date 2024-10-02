@@ -7,4 +7,4 @@ const configuraEixo = {
     size: 16,
     family: pegarCss('--fonte-texto')
 }
-export{pegarCss}
+export{pegarCss, configuraEixo}

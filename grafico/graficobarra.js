@@ -1,4 +1,4 @@
-import { pegarCss } from "./comum.js"
+import { pegarCss, configuraEixo } from "./comum.js"
 
 async function criarGraficoBarra() {
     const url = 'https://raw.githubusercontent.com/SNOWFORSE/json/refs/heads/main/grafico.json';
@@ -22,12 +22,18 @@ async function criarGraficoBarra() {
         plot_bgcolor: pegarCss('--rosa-claro'),
         paper_bgcolor: pegarCss('--rosa-claro'),
         title:{
-            text: 'Os Celulares Com Melhor Custo Beneficio do Mundo ',
+            text: 'Os Celulares Com Melhor Custo Beneficio',
             font: {
                 color: pegarCss('--roxo-claro'),
                 family: pegarCss('--fonte-titulo'),
                 size: 50
             }
+        },
+        xaxis: {
+            tickfont: configuraEixo,
+            tickangle: 20        },
+        yaxis: {
+            tickfont: configuraEixo
         }
     }
     
