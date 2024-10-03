@@ -1,37 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
 }
 
 :root{
-    --magnolia: #f4effaff;
-    --violeta: #2f184bff;
-    --roxo: #532b88ff;
-    --roxo-claro: #9b72cfff;
-    --rosa-claro: #c8b1e4ff;
+    --timberwolf: #dad7cdff;
+    --sage: #a3b18aff;
+    --verde-folha: #588157ff;
+    --verde-musgo: #3a5a40ff;
+    --verde-escuro: #344e41ff;
     --preto: #000000;
-    --fonte-titulo: "M PLUS Rounded 1c", sans-serif;
-    --fonte-texto: "Cinzel", serif;
+    --fonte-titulo: "Acme", sans-serif;
+    --fonte-texto: "Noticia Text", serif;
 }
 
 body{
-    background-color: var(--magnolia);
+    background-color: var(--verde-folha);
     font-family: var(--fonte-texto);
     color: var(--preto);
     height: 100vh;
 }
 
 header{
-    background-color: var(--rosa-claro);
+    background-color: var(--verde-musgo);
     text-align: center;
 }
 
 h1{
     font-family: var(--fonte-titulo);
     font-size: 3rem;
-    color: var(--roxo-claro);
+    color: var(--sage);
 }
 nav{
     display: flex;
@@ -47,7 +46,7 @@ nav a{
 
 nav a:hover{
     text-transform: underline;
-    color: var(--roxo);
+    color: var(--verde-escuro);
     transform: scale(0.9);
     transition: transform 0.3s;
 }
@@ -55,7 +54,7 @@ nav a:hover{
 .caixa-grafico{
     margin: 5rem;
     font-size: 1.5rem;
-    background-color: var(--rosa-claro);
+    background-color: var(--sage);
     padding: 2rem;
     border-radius: 15px;
     border: var(--preto) double 5px;
@@ -77,8 +76,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--rosa-claro);
-    color: var(--roxo);
+    background-color: var(--verde-musgo);
+    color: var(--sage);
     width: 100%;
     height: 3rem;
     margin-top: 2rem;

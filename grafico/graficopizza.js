@@ -14,18 +14,18 @@ async function criarGraficoPizza() {
             values: porcentagem,
             type: 'pie',
             marker: {
-                colors: celular.map(() => pegarCss('--roxo-claro'))
+                colors: celular.map(() => pegarCss(''))
             }
         }
     ];
 
     const layout = {
-        plot_bgcolor: pegarCss('--rosa-claro'),
-        paper_bgcolor: pegarCss('--rosa-claro'),
+        plot_bgcolor: pegarCss('--sage'),
+        paper_bgcolor: pegarCss('--sage'),
         title: {
             text: 'Os Celulares Com Melhor Custo Benefício',
             font: {
-                color: pegarCss('--roxo-claro'),
+                color: pegarCss('--verde-musgo'),
                 family: pegarCss('--fonte-titulo'),
                 size: 50
             }

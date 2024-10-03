@@ -13,18 +13,18 @@ async function criarGraficoBarra() {
             y: porcentagem,
             type: 'bar',
             marker:{
-                color: pegarCss('--roxo-claro')
+                color: pegarCss('--verde-escuro')
             }
         }
     ]
 
     const layout = {
-        plot_bgcolor: pegarCss('--rosa-claro'),
-        paper_bgcolor: pegarCss('--rosa-claro'),
+        plot_bgcolor: pegarCss('--sage'),
+        paper_bgcolor: pegarCss('--sage'),
         title:{
             text: 'Os Celulares Com Melhor Custo Beneficio',
             font: {
-                color: pegarCss('--roxo-claro'),
+                color: pegarCss('--verde-musgo'),
                 family: pegarCss('--fonte-titulo'),
                 size: 50
             }
