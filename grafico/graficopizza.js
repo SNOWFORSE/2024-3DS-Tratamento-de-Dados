@@ -14,7 +14,7 @@ async function criarGraficoPizza() {
             values: porcentagem,
             type: 'pie',
             marker: {
-                colors: celular.map(() => pegarCss(''))
+                colors: pegarCss('')
             }
         }
     ];
