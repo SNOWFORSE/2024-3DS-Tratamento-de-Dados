@@ -1,57 +1,61 @@
-import { pegarCss } from "./comum.js"
+import { pegarCss } from "./comum.js";
 
-async function graficosTancredo(){
-    const url = 'https://raw.githubusercontent.com/SNOWFORSE/json/refs/heads/main/daumnome.json'
-    const res = await fetch(url)
-    const dados = await res.json()
-    const celularesVotados = dados.slice(1).map(celulares => celulares[2])
-    const contagemCelulares = celularesVotados.reduce((acc, celularesVotados) => {
-        acc[celularesVotados] = (acc[celularesVotados] || 0) + 1 
-        return acc
-    }, {})
+async function celularesTancredo() {
+    const url = "https://raw.githubusercontent.com/SNOWFORSE/json/refs/heads/main/daumnome.json";
+    const res = await fetch(url);
+    const dados = await res.json();
+    
+    const celularesPreferidos = dados.slice(1).map(celular => celular[1]);
+    
+    const contagemCelular = celularesPreferidos.reduce((acc, celular) => {
+        acc[celular] = (acc[celular] || 0) + 1;
+        return acc;
+    }, {});
 
-    const valores = Object.values(contagemCelulares)
-    const etiqueta = Object.keys(contagemCelulares)
+    const valores = Object.values(contagemCelular);
+    const etiquetas = Object.keys(contagemCelular);
 
     const data = [
         {
             values: valores,
-            labels: etiqueta,
+            labels: etiquetas,
             type: 'pie',
             textinfo: 'label+percent'
         }
-    ]
+    ];
     
-    const layout = 
-    {
+    const layout = {
+        height: 700,
+        width: 800,
         plot_bgcolor: pegarCss('--sage'),
         paper_bgcolor: pegarCss('--sage'),
-        font:{
-            color: pegarCss('--verde-musgo'),
-            family: pegarCss('--fonte-titulo'),
-            size: 16,
+        title: {
+            text: 'Os celulares preferidos do Tancredo'
         }
-    }
+    };
 
-    const pesquisaTitulo = document.createElement('h3')
-    pesquisaTitulo.classList.add('caixa-grafico__titiulo')
-    pesquisaTitulo.innerHTML = `Os consoles mais votados no Colégio <span>Tancredo</span>`
+    const pesquisaTitulo = document.createElement('h3');
+    pesquisaTitulo.classList.add('caixa-grafico__titulo');
+    pesquisaTitulo.innerHTML = `Os celulares mais votados no Colégio <span>Tancredo</span>`;
     
-    const grafico = document.createElement('div')
-    grafico.className = 'grafico-disco'
-    document.getElementById('caixa-grafico').appendChild(pesquisaTitulo)
-    document.getElementById('caixa-grafico').appendChild(grafico)
+    const grafico = document.createElement('div');
+    grafico.className = 'grafico-disco';
+    
+    const caixaGrafico = document.getElementById('caixa-grafico');
+    caixaGrafico.appendChild(pesquisaTitulo);
+    caixaGrafico.appendChild(grafico);
+    
     const config = {
         responsive: true,
-        displeyModeBar: false
-    }
+        displayModeBar: false,
+    };
+    
+    Plotly.newPlot(grafico, data, layout, config);
 
-    Plotly.newPlot(grafico, data, layout, config)
-
-    const caixa = document.getElementById('caixa-grafico')
-    const paragrafo = document.createElement('p')
-    paragrafo.classList.add('caixa-grafico__texto')
-    paragrafo.innerHTML = ''
-    caixa.appendChild(paragrafo)
+    const paragrafo = document.createElement('p');
+    paragrafo.classList.add('caixa-grafico__texto');
+    paragrafo.innerHTML = 'Nota-se que o celular mais votado no colégio Tancredo é igual ao mais votado no mundo. Enquanto os estudantes elegeram, com 48 votos, <span>o Samsung Galaxy A54</span> como o celular mais desejado, já a pesquisa global indicou que <span>o Samsung Galaxy A54</span> também é o celular mais comprado no mundo.';
+    caixaGrafico.appendChild(paragrafo);
 }
-graficosTancredo()
+
+celularesTancredo();
